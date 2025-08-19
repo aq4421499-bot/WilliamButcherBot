@@ -1,15 +1,16 @@
 services:
   - type: web
-    name: telegram-bot
+    name: group-help-bot
     env: python
-    buildCommand: pip install -r requirements.txt
+    plan: free
+    buildCommand: pip install --no-cache-dir -r requirements.txt
     startCommand: python3 bot.py
     envVars:
-      - key: API_ID
-        value: "your_api_id"
-      - key: API_HASH
-        value: "your_api_hash"
       - key: BOT_TOKEN
-        value: "your_bot_token"
-      - key: MONGO_DB_URI
-        value: "your_mongo_db_uri"
+        value: "your-telegram-bot-token"
+      - key: API_ID
+        value: "your-api-id"
+      - key: API_HASH
+        value: "your-api-hash"
+      - key: MONGO_URI
+        value: "your-mongodb-uri"
